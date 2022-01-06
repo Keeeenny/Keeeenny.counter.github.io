@@ -6,13 +6,11 @@ plus.addEventListener("mousedown", calculator);
 minus.addEventListener("click", calculator);
 
 
-
 function calculator(){
 
     let identifier = this.attributes["data-value"].value;
-
     let value = counter.innerHTML;
-
+    
     let operators = {
         add: +1,
         sub: -1,
@@ -21,7 +19,6 @@ function calculator(){
     let result = parseInt(value)+operators[identifier];
 
     document.getElementById("counter").innerHTML = result
-
 
 };
 
