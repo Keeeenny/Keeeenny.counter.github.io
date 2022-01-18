@@ -9,7 +9,6 @@
           document.body.append(div);
           
           
-          
         const minus = createButton('-');
         const plus = createButton('+');
                 
