@@ -20,7 +20,6 @@ function createButton(operator) {
   const btn = document.createElement('button');
   
     btn.innerHTML = operator;
-    btn.setAttribute('id', operator);
     btn.setAttribute('data-value', operator);
     div.append(btn);
 
