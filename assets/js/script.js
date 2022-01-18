@@ -1,25 +1,42 @@
-const counter = document.getElementById("counter");
-const plus = document.getElementById("plus");
-const minus = document.getElementById("minus");
+        const counter = document.createElement('h1');
+          counter.setAttribute('id', 'counter');
+          counter.innerHTML = '0';
+          document.body.append(counter);
+        
+        
+        const div = document.createElement('div');
+          div.className = 'container';
+          document.body.append(div);
+          
+          
+          
+        const minus = createButton('-');
+        const plus = createButton('+');
+                
 
-plus.addEventListener("mousedown", calculator);
-minus.addEventListener("click", calculator);
+        function createButton(operator) {
+            
+            const btn = document.createElement('button');
+            
+              btn.innerHTML = operator;
+              btn.setAttribute('data-value', operator);
+              div.append(btn);
 
-
-function calculator(){
-
-    let identifier = this.attributes["data-value"].value;
-    let value = counter.innerHTML;
-    
-    let operators = {
-        add: +1,
-        sub: -1,
-    }
-
-    let result = parseInt(value)+operators[identifier];
-
-    document.getElementById("counter").innerHTML = result
-
-};
-
-
+              
+            btn.addEventListener ('mousedown', () => {
+                
+                let identifier = btn.attributes["data-value"].value;
+                let value = counter.innerHTML;
+                
+                let count = {
+                    '+': +1,
+                    '-': -1,
+                };
+                
+                let result = parseInt(value)+count[identifier];
+                
+                document.getElementById('counter').innerHTML = result;
+            
+            })
+        
+        } 
